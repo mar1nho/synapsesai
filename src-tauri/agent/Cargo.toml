@@ -1,0 +1,18 @@
+[package]
+name = "synapseia-agent"
+version = "0.1.0"
+edition = "2021"
+description = "Sidecar do SynapseIA: hook do Claude Code e servidor MCP criar_agente"
+authors = ["Marinho"]
+
+[build-dependencies]
+winresource = "0.1"
+
+[dependencies]
+serde_json = "1"
+ureq = { version = "2", default-features = false }
+
+[profile.release]
+opt-level = "s"
+lto = true
+strip = true

@@ -1,0 +1,3 @@
+# Estilo do projeto: linhas largas e construções curtas numa linha só.
+max_width = 160
+use_small_heuristics = "Max"

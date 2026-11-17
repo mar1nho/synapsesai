@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    name: Frontend (tipos e testes)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+      - name: Tipos
+        run: npx tsc --noEmit
+      - name: Testes
+        run: npm test
+
+  rust:
+    name: Rust (formato, clippy e testes)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            src-tauri
+            src-tauri/agent
+      - name: Formato
+        run: |
+          cargo fmt --manifest-path src-tauri/Cargo.toml --check
+          cargo fmt --manifest-path src-tauri/agent/Cargo.toml --check
+      # O build do app exige o sidecar em src-tauri/binaries (bundle.externalBin).
+      - name: Compila o sidecar
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-agent.ps1
+      - name: Clippy
+        run: |
+          cargo clippy --manifest-path src-tauri/agent/Cargo.toml --all-targets -- -D warnings
+          cargo clippy --manifest-path src-tauri/Cargo.toml --lib --tests -- -D warnings
+      - name: Testes do sidecar
+        run: cargo test --manifest-path src-tauri/agent/Cargo.toml
+      - name: Testes do app
+        run: cargo test --manifest-path src-tauri/Cargo.toml --lib

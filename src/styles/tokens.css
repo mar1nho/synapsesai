@@ -1,0 +1,105 @@
+﻿/* Temas do SynapseIA. Todas as fontes em peso 400.
+   navy (padrão) = superfície azul-marinho; dark = grafite neutro; light = claro. */
+:root, :root[data-theme="navy"] {
+  color-scheme: dark;
+  --bg: #091F68;
+  --surface: #00216C;
+  --raised: #0B2173;
+  --line: #2745A0;
+  --accent: #0043A5;
+  --accent-a46: rgba(0, 67, 165, .46);
+  --accent-a20: rgba(0, 67, 165, .22);
+  --on-accent: #FFF9EE;
+  --ink: #FFF9EE;
+  --ink-muted: rgba(255, 249, 238, .72);
+  --ink-dim: rgba(255, 249, 238, .6);
+  --warning: #E29C00;
+  --warning-ink: #E29C00;
+  --on-warning: #091F68;
+  --success-band: rgba(7, 147, 0, .45);
+  --on-success: #FFF9EE;
+  --danger: #F70000;
+  --knob: #FFF9EE;
+  --oliva: #99DB07;
+  --scrim: rgba(0, 8, 36, .72);
+  --shadow-pop: 0 10px 30px rgba(0, 6, 30, .45);
+  --syn-keyword: #8FB4FF;
+  --syn-string: #B8E07A;
+  --syn-comment: rgba(255, 249, 238, .52);
+  --syn-number: #F2C46D;
+  --syn-func: #FFD9A0;
+  --syn-type: #7FD4E8;
+  --syn-heading: #FFF9EE;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111418;
+  --surface: #0b0d10;
+  --raised: #171b21;
+  --line: #2b313b;
+  --accent: #2f6fde;
+  --accent-a46: rgba(47, 111, 222, .38);
+  --accent-a20: rgba(47, 111, 222, .16);
+  --on-accent: #ffffff;
+  --ink: #e8eaee;
+  --ink-muted: rgba(232, 234, 238, .72);
+  --ink-dim: rgba(232, 234, 238, .58);
+  --warning: #e8a33a;
+  --warning-ink: #f0b357;
+  --on-warning: #1a1200;
+  --success-band: rgba(46, 160, 90, .42);
+  --on-success: #ffffff;
+  --danger: #e5484d;
+  --knob: #e8eaee;
+  --oliva: #99DB07;
+  --scrim: rgba(0, 0, 0, .65);
+  --shadow-pop: 0 10px 30px rgba(0, 0, 0, .5);
+  --syn-keyword: #7aa2f7;
+  --syn-string: #9ece6a;
+  --syn-comment: #7d8590;
+  --syn-number: #ff9e64;
+  --syn-func: #e0af68;
+  --syn-type: #2ac3de;
+  --syn-heading: #e8eaee;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #eef0f4;
+  --surface: #ffffff;
+  --raised: #f5f6f9;
+  --line: #cfd4dc;
+  --accent: #0043A5;
+  --accent-a46: rgba(0, 67, 165, .16);
+  --accent-a20: rgba(0, 67, 165, .07);
+  --on-accent: #ffffff;
+  --ink: #141820;
+  --ink-muted: rgba(20, 24, 32, .74);
+  --ink-dim: rgba(20, 24, 32, .6);
+  --warning: #E29C00;
+  --warning-ink: #8a5a00;
+  --on-warning: #1a1200;
+  --success-band: rgba(7, 147, 0, .18);
+  --on-success: #0b4d07;
+  --danger: #d1242f;
+  --knob: #ffffff;
+  --oliva: #99DB07;
+  --scrim: rgba(20, 24, 32, .38);
+  --shadow-pop: 0 10px 30px rgba(20, 24, 32, .18);
+  --syn-keyword: #0043A5;
+  --syn-string: #1f7a1f;
+  --syn-comment: #687080;
+  --syn-number: #a35200;
+  --syn-func: #8b2fb3;
+  --syn-type: #0b6e79;
+  --syn-heading: #141820;
+}
+
+:root {
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-ui: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Cascadia Mono", Consolas, monospace;
+  --r-xs: 2px;
+  --r-pill: 999px;
+}
